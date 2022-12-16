@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.Login {
+    background-image: url("../images/thor.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+    overflow: hidden;
+
+}
+
+.Button-container {
+    display: flex;
+    margin-left: 57vw;
+    margin-top: 1vh;
+    width: 500px;
+
+
+}
+
+.Button {
+    width: 250px;
+    height: 45px;
+    margin-left: 40px;
+    font-size: medium;
+    background-color: #def5fd;
+    color: #2c4f8f;
+    border: 3px;
+    border-color: #fcfefe;
+    border-radius: 5px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.Button:hover {
+    color: BLACK;
+    box-shadow: 0 5px 15px #fcfbf7;
+}
+
+img:hover {
+    color: BLACK;
+    box-shadow: 0 5px 15px #fcfbf7;
+}
+
+h4 {
+    font-size: 4em;
+    margin-left: 60vw;
+    margin-top: 20vh;
+    font-family: "Montserrat";
+    padding-bottom: 0;
+    margin-bottom: 9px;
+}
+
+h3 {
+    padding-top: 0;
+    margin-left: 60vw;
+    margin-top: 0;
+    width: 600px;
+    font-family: "Montserrat";
+}
+
+
+
+img {
+    width: 300px;
+    margin-left: 64vw;
+    transition: all 0.2s ease-in-out;
+
+}
