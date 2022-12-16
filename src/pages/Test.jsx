@@ -25,94 +25,37 @@ export default function RecruitmentTest() {
     console.log(season_id);
 
 
+    // useEffect(() => {
+    //     window.onload = async event => {
+    //         let stored_data = new Array();
+    //         stored_data = JSON.parse(localStorage.getItem("data" + season_id))
+    //         console.log(stored_data);
 
-    window.onload = async event => {
-        let stored_data = new Array();
-        stored_data = JSON.parse(localStorage.getItem("data" + season_id))
-
-
-
-
-
-        for (let i = 0; i < stored_data.length; i++) {
-            let enrollment_number = stored_data[i].enrollment_number
-            let mode_of_entry = stored_data[i].mode_of_entry
-            let project_link = stored_data[i].Project_link
-
-
-            if (mode_of_entry === 1) {
-                axios({
-                    method: "post",
-                    url: `http://localhost:8000/user/api_view/recruitment_test/`,
-                    headers: {
-                        Authorization: "Token " + localStorage.getItem("token"),
-                    },
-                    data: {
-                        enrollment_number: enrollment_number,
-                        recruitment_season_code: season_id,
-                    }
-
-                }).then((response) => {
-                    console.log(response)
-
-                });
-                console.log("recruitment")
-
-            }
+    //         axios({
+    //             method: "get",
+    //             url: `http://localhost:8000/user/api_view/recruitment_test/?recruitment_season_code=` + season_id,
+    //             headers: {
+    //                 Authorization: "Token " + localStorage.getItem("token"),
+    //             },
 
 
-            else if (mode_of_entry === 2) {
-                axios({
-                    method: "post",
-                    url: `http://localhost:8000/user/api_view/winter_assingment/`,
-                    headers: {
-                        Authorization: "Token " + localStorage.getItem("token"),
-                    },
-                    data: {
-                        enrollment_number: enrollment_number,
-                        recruitment_season_code: season_id,
-                        project_link: project_link
-                    }
+    //         }).then((response) => {
+    //             console.log("get request")
+    //             console.log(response)
 
-                }).then((response) => {
-                    console.log(response)
-                    if (response.status === 200) {
+    //             for (let i = 0; i < response.data.length; i++) {
 
-
-                    }
-                });
-                console.log("winter")
-            }
+    //                 console.log(response.data[i])
+    //                 setSeasons(response.data)
 
 
 
+    //             }
 
-        }
+    //         });
 
-        axios({
-            method: "get",
-            url: `http://localhost:8000/user/api_view/recruitment_test/?recruitment_season_code=` + season_id,
-            headers: {
-                Authorization: "Token " + localStorage.getItem("token"),
-            },
-
-
-        }).then((response) => {
-            console.log("get request")
-            console.log(response)
-
-            for (let i = 0; i < response.data.length; i++) {
-                // setSeasons(response.data[i])
-                console.log(response.data[i])
-                setSeasons(response.data)
-
-
-
-            }
-
-        });
-
-    }
+    //     }
+    // });
 
     const round1_url = "/recruitment_seasons/recruitment_test/" + season_id + "/questions/" + round_number
     const navigate = useNavigate();
@@ -136,13 +79,13 @@ export default function RecruitmentTest() {
 
 
             }).then((response) => {
-                console.log("get 1 request")
+                console.log("winter")
                 console.log(response)
 
                 for (let i = 0; i < response.data.length; i++) {
 
                     console.log(response.data[i])
-                    setLoading(false)
+
                     setSeasons(response.data)
 
                 }
@@ -150,7 +93,7 @@ export default function RecruitmentTest() {
             });
         }
         else if (value == 1) {
-            console.log("nope")
+
             axios({
                 method: "get",
                 url: `http://localhost:8000/user/api_view/recruitment_test/?recruitment_season_code=` + season_id,
@@ -160,13 +103,13 @@ export default function RecruitmentTest() {
 
 
             }).then((response) => {
-                console.log("get 1 request")
+                console.log("recruitment")
                 console.log(response)
 
                 for (let i = 0; i < response.data.length; i++) {
 
                     console.log(seasons)
-                    setLoading(false)
+
                     setSeasons(response.data)
 
                 }
@@ -214,7 +157,7 @@ export default function RecruitmentTest() {
 
 
 
-        // </>
+        </>
 
 
 

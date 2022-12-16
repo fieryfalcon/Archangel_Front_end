@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import "../css/Loading.css"
 
 const delay = ms => new Promise(
   resolve => setTimeout(resolve, ms)
@@ -48,13 +49,11 @@ export default function Loading() {
 
   return (
     <>
+      <div className="Loading">
+        <p>Loading..!</p>
+      </div>
 
-      <p >
-        Loading!!!
-      </p>
-      <h2>
-        {id}
-      </h2>
+
 
 
     </>

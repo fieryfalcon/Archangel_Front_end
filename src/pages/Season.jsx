@@ -131,9 +131,52 @@ export default function Season() {
                                         data: data
                                     }).then((response) => {
 
-                                        console.log("created")
+                                        for (var j = 0; j < Alldata.length; j++) {
+                                            newarray = Alldata[j].recruitment_season_code.map(String);
+                                            newarray.push(season_id)
+                                            console.log(newarray)
+
+
+                                            if (code === 1) {
+                                                axios({
+                                                    method: "post",
+                                                    url: `http://localhost:8000/user/api_view/recruitment_test/`,
+                                                    headers: {
+                                                        Authorization: "Token " + localStorage.getItem("token"),
+                                                    },
+                                                    data: {
+                                                        enrollment_number: enrollmentNumber,
+                                                        recruitment_season_code: season_id,
+                                                    }
+                                                }).then((response) => {
+
+                                                    console.log("created recruitment test object")
+
+                                                });
+                                            }
+
+                                            else if (code === 2) {
+                                                axios({
+                                                    method: "post",
+                                                    url: `http://localhost:8000/user/api_view/winter_assingment/`,
+                                                    headers: {
+                                                        Authorization: "Token " + localStorage.getItem("token"),
+                                                    },
+                                                    data: {
+                                                        enrollment_number: enrollmentNumber,
+                                                        recruitment_season_code: season_id,
+                                                        project_link: project_link
+                                                    }
+
+                                                }).then((response) => {
+                                                    console.log(response)
+
+                                                });
+                                            }
+                                        }
 
                                     });
+
 
 
 
@@ -153,12 +196,55 @@ export default function Season() {
                                     data: data
                                 }).then((response) => {
 
-                                    console.log(response)
+                                    for (var j = 0; j < Alldata.length; j++) {
+                                        newarray = Alldata[j].recruitment_season_code.map(String);
+                                        newarray.push(season_id)
+                                        console.log(newarray)
+
+
+                                        if (code === 1) {
+                                            axios({
+                                                method: "post",
+                                                url: `http://localhost:8000/user/api_view/recruitment_test/`,
+                                                headers: {
+                                                    Authorization: "Token " + localStorage.getItem("token"),
+                                                },
+                                                data: {
+                                                    enrollment_number: enrollmentNumber,
+                                                    recruitment_season_code: season_id,
+                                                }
+                                            }).then((response) => {
+
+                                                console.log("created recruitment test object")
+
+                                            });
+                                        }
+
+                                        else if (code === 2) {
+                                            axios({
+                                                method: "post",
+                                                url: `http://localhost:8000/user/api_view/winter_assingment/`,
+                                                headers: {
+                                                    Authorization: "Token " + localStorage.getItem("token"),
+                                                },
+                                                data: {
+                                                    enrollment_number: enrollmentNumber,
+                                                    recruitment_season_code: season_id,
+                                                    project_link: project_link
+                                                }
+
+                                            }).then((response) => {
+                                                console.log(response)
+
+                                            });
+                                        }
+                                    }
 
                                 }
                                 );
                             }
                         }
+
 
 
 

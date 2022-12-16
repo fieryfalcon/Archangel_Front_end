@@ -69,7 +69,7 @@ export default function Sections() {
 
             axios({
                 method: "get",
-                url: `http://localhost:8000/user/api_view/section/`,
+                url: `http://localhost:8000/user/api_view/section/?recruitment_season=$` + season_id,
                 headers: {
                     Authorization: "Token " + localStorage.getItem("token"),
                 },

@@ -69,9 +69,7 @@ export default function Recruitment_seasons() {
             axios({
                 method: "get",
                 url: season_get_url,
-                params: {
-                    _limit: 5
-                },
+
                 headers: {
                     Authorization: "Token " + localStorage.getItem("token"),
                 },
@@ -104,7 +102,7 @@ export default function Recruitment_seasons() {
                     <SeasonLayout
 
                         role={season.role}
-                        // year={season.year}
+                        year={season.year}
                         id={season.id}
 
                     />

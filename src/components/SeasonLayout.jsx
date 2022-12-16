@@ -14,10 +14,10 @@ export default function ParticipantsLayout(prop) {
 
       <div style={{ padding: 10 }}>
 
-        <h4>{prop.name}</h4>
-        <h4>{prop.mail}</h4>
-        <h4>{prop.enrollmentNumber}</h4>
-        <h4>{prop.mode_of_entry}</h4>
+        <h5>{prop.name}</h5>
+        <h5>{prop.mail}</h5>
+        <h5>{prop.enrollmentNumber}</h5>
+        <h5>{prop.mode_of_entry}</h5>
 
 
       </div>
